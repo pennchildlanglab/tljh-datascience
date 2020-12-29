@@ -2,7 +2,7 @@ from tljh.hooks import hookimpl
 from tljh.user import ensure_group
 import sh
 
-@hookspec
+@hookimpl
 def tljh_extra_user_conda_packages():
     """
     Return list of extra conda packages to install in user environment.
