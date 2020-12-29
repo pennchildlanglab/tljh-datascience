@@ -1,7 +1,5 @@
 from tljh.hooks import hookimpl
-from tljh.user import ensure_group
 import subprocess
-
 
 @hookimpl
 def tljh_config_post_install(config):
@@ -48,28 +46,25 @@ def tljh_post_install():
     # then'll we'll tell TLJH to use docker spawner 
     # and that the image to use is jupyter/datascience-notebook
     def tljh_use_docker_spawner():
-        # create the config file
-        def create_config_file():
-            f = open("/opt/tljh/config/jupyterhub_config.d/dockerspawner_tljh_config.py", "w")
-            
-            contents = [
-                "c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'",
-                "c.DockerSpawner.image = 'jupyter/datascience-notebook:r-4.0.3'",
-                "from jupyter_client.localinterfaces import public_ips",
-                "c.JupyterHub.hub_ip = public_ips()[0]",
-                "c.DockerSpawner.name_template = '{prefix}-{username}-{servername}'"
-            ]
-            
-            for line in contents:
-                f.write(line)
-                f.write("\n")
-                
-            f.close()
-            
-        # ok, go!
-        create_config_file()
+       
+        # create the dockerspawner config file
+        f = open("/opt/tljh/config/jupyterhub_config.d/dockerspawner_tljh_config.py", "w")
         
-    
+        # add the details to use docker spawner with the datascience image
+        contents = [
+            "c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'",
+            "c.DockerSpawner.image = 'jupyter/datascience-notebook:r-4.0.3'",
+            "from jupyter_client.localinterfaces import public_ips",
+            "c.JupyterHub.hub_ip = public_ips()[0]",
+            "c.DockerSpawner.name_template = '{prefix}-{username}-{servername}'"
+        ]
+        
+        # add to our config file and close
+        for line in contents:
+            f.write(line)
+            f.write("\n")
+        f.close()
+
     # finally we need to download the docker image so it's ready
     def get_docker_image():
         subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3", shell=True)
