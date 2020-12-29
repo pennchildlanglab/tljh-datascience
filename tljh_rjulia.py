@@ -1,5 +1,4 @@
 from tljh.hooks import hookimpl
-from tljh.hooks import hookspec
 from tljh.user import ensure_group
 import sh
 
@@ -8,7 +7,11 @@ def tljh_extra_user_conda_packages():
     """
     Return list of extra conda packages to install in user environment.
     """
-    return ['r-base', 'r-essentials', 'r-irkernel']
+    return [
+        'r-base', 
+        'r-essentials', 
+        'conda-forge/r-irkernel'
+    ]
 
 # @hookimpl
 # def tljh_extra_apt_packages():
