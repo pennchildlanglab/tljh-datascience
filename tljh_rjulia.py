@@ -10,9 +10,9 @@ def tljh_extra_user_conda_packages():
     """
     return ['r-base', 'r-essentials', 'r-irkernel']
 
-@hookimpl
-def tljh_extra_apt_packages():
-  return ['julia']
+# @hookimpl
+# def tljh_extra_apt_packages():
+#   return ['julia']
   
  
 @hookimpl
