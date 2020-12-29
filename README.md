@@ -1,3 +1,3 @@
-# testrepo
+# tljh_rjulia
 
-docker image
+This plugin adds R and Julia kernels to the littlest jupyterhub. 
