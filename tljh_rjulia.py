@@ -29,7 +29,7 @@ def tljh_config_post_install(config):
     # jupyterhub-users doesn't get created until a user logs in
     # make sure it's created before changing permissions on directory
     ensure_group('jupyterhub-users') 
-    sh.chown('root:jupyterhub-users', '/opt/tljh/user/lib/R')
+   # sh.chown('root:jupyterhub-users', '/opt/tljh/user/lib/R')
     # sh.chmod('777', '/srv/scratch')
     # sh.chmod('g+s', '/srv/scratch')
     # sh.ln('-s', '/srv/scratch', '/etc/skel/scratch')
