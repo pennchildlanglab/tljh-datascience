@@ -25,7 +25,7 @@ def tljh_config_post_install(config):
     ### sudo chmod 777 /srv/scratch
     ### sudo chmod g+s /srv/scratch
     ### sudo ln -s /srv/scratch /etc/skel/scratch
-    sh.mkdir('/opt/tljh/user/lib/R', '-p')
+    #sh.mkdir('/opt/tljh/user/lib/R', '-p')
     # jupyterhub-users doesn't get created until a user logs in
     # make sure it's created before changing permissions on directory
     ensure_group('jupyterhub-users') 
