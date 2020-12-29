@@ -10,7 +10,8 @@ def tljh_extra_user_conda_packages():
     return [
         'r-base', 
         'r-essentials', 
-        'conda-forge/r-irkernel'
+        'r-irkernel',
+        'julia'
     ]
 
 # @hookimpl
