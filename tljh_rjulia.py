@@ -25,7 +25,7 @@ def tljh_config_post_install(config):
     config['user_environment'] = user_environment
  
 @hookimpl
-def tljh_post_install(config):
+def tljh_post_install():
     """
     Configure /srv/scratch and change configs/mods
     """
