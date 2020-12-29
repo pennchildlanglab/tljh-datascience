@@ -50,7 +50,7 @@ def tljh_post_install():
     def tljh_use_docker_spawner():
         # create the config file
         def create_config_file():
-            f = open("/opt/tljh/config/jupyterhub_config.d/dockerspawner_tljh_config.py")
+            f = open("/opt/tljh/config/jupyterhub_config.d/dockerspawner_tljh_config.py", "w")
             write_config_file()
         
         def write_config_file():
