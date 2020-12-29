@@ -1,4 +1,5 @@
 from tljh.hooks import hookimpl
+from tljh.hooks import hookspec
 from tljh.user import ensure_group
 import sh
 
