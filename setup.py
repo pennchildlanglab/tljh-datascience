@@ -8,4 +8,5 @@ setup(
   url="https://github.com/pennchildlanglab/tljh-rjulia",
   entry_points = {"tljh": ["rjulia = tljh_rjulia"]},
   py_modules=["tljh_rjulia"],
+  install_requires=["sh"],
 )
