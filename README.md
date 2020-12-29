@@ -1,8 +1,8 @@
 # tljh-datascience
 
-This plugin installs Docker and DockerSpawner and then tells TLJH to use DockerSpawner to select the [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/tags?page=1&ordering=last_updated) image as the environment for each user. This makes it easy to include R and Julia Kernels for your JupyterHub users in addition to Python 3.
+Tells TLJH [DockerSpawner](https://jupyterhub-dockerspawner.readthedocs.io/en/latest/) to start user servers inside [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/tags?page=1&ordering=last_updated) docker containers. This makes it easy to include R and Julia Kernels for your JupyterHub users. Read more about what's included in the `jupyter/datascience-notebook` [here](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook). 
 
-It also sets jupyterlab as the default IDE.
+It also sets jupyterlab as the default IDE. 
 
 ## Install
 
