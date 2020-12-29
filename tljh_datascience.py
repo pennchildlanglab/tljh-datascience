@@ -74,7 +74,7 @@ def tljh_post_install():
     
     # finally we need to download the docker image so it's ready
     def get_docker_image():
-        subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3")
+        subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3", shell=True)
    
     install_docker()
     install_docker_spawner()
