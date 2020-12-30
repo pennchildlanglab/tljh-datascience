@@ -2,6 +2,15 @@ from tljh.hooks import hookimpl
 import subprocess
 
 @hookimpl
+def tljh_extra_user_pip_packages():
+    """
+    Return list of extra pip packages to install in user environment.
+    """
+    return [
+        'jupyterlab-git'
+    ]
+
+@hookimpl
 def tljh_config_post_install(config):
     """
     Set JupyterLab to be default
