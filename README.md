@@ -17,7 +17,7 @@ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master
 
 ## Attribution
 
-This plugin was inspired by [this Ideonate post](https://ideonate.com/DockerSpawner-in-TLJH/) and the [rxns Stack plugin](https://github.com/sustainable-processes/tljh-rxns)
+This plugin was inspired by [this Ideonate post](https://ideonate.com/DockerSpawner-in-TLJH/) and the [Rxns stack plugin](https://github.com/sustainable-processes/tljh-rxns)
 
 ## To-do
 
