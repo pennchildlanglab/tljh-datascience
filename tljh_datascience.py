@@ -2,9 +2,9 @@ from tljh.hooks import hookimpl
 import subprocess
 
 @hookimpl
-def tljh_extra_user_pip_packages():
+def tljh_extra_user_conda_packages():
     """
-    Return list of extra pip packages to install in user environment.
+    Return list of extra conda packages to install in user environment.
     """
     return [
         'jupyterlab-git'
@@ -88,7 +88,6 @@ def tljh_post_install():
     # and the restart TLJH and rebuild jupyterlab
     def restart_tljh():
         subprocess.call("sudo tljh-config reload", shell=True)
-        subprocess.call("jupyter lab build")
    
     # kick things off by installing docker
     install_docker()
