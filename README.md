@@ -19,6 +19,9 @@ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master
 
 This plugin was inspired by [this Ideonate post](https://ideonate.com/DockerSpawner-in-TLJH/) and the [rxns Stack plugin](https://github.com/sustainable-processes/tljh-rxns)
 
+## To-do
+
+- would be great to allow users to set the docker image they want to use (or at least the datascience-notebook image); right now it's hard coded to use a stable release (r-4.0.3)
 
 
 
