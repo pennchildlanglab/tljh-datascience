@@ -1,8 +1,8 @@
 # tljh-datascience
 
-Tells TLJH to use [DockerSpawner](https://jupyterhub-dockerspawner.readthedocs.io/en/latest/) to start user servers inside [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/tags?page=1&ordering=last_updated) docker containers. This makes it easy to include R and Julia Kernels for your JupyterHub users. Read more about what's included in the `jupyter/datascience-notebook` [here](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook). 
+Tells TLJH to use [DockerSpawner](https://jupyterhub-dockerspawner.readthedocs.io/en/latest/) to spin up [jupyter/datascience-notebook](https://hub.docker.com/r/jupyter/datascience-notebook/tags?page=1&ordering=last_updated) containers for each user. This makes it easy to include R and Julia Kernels for your JupyterHub users. Read more about what's included in the `jupyter/datascience-notebook` [here](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook). 
 
-It also sets jupyterlab as the default IDE. 
+The plugin also sets jupyterlab as the default IDE. 
 
 ## Install
 
