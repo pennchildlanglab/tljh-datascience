@@ -17,13 +17,13 @@ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master
 
 ## Customize docker images
 
-To add other or different images for your users to select, edit the dockerspawner config file (SSH into your server)
+To add other or different images for your users to select, edit the dockerspawner config file by SSH-ing into your server and running
 
 ```
 sudo nano /opt/tljh/config/jupyterhub_config.d/dockerspawner_tljh_config.py
 ```
 
-The current list of available images is in `c.DockerSpawner.image_whitelist = ['jupyter/datascience-notebook:r-4.0.3', 'jupyter/datascience-notebook:r-3.6.6']`. You can edit this list include any docker images you want to make available to your users. Then reload the hub.
+The current list of available images is in `c.DockerSpawner.image_whitelist = ['jupyter/datascience-notebook:r-4.0.3', 'jupyter/datascience-notebook:r-3.6.6']`. You can edit this list to include any docker images you want to make available to your users. Then reload the hub.
 
 ```
 sudo tljh-config reload
