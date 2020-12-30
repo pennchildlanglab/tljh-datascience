@@ -7,7 +7,7 @@ def tljh_extra_user_conda_packages():
     Return list of extra conda packages to install in user environment.
     """
     return [
-        'jupyter',
+        'jupyterlab',
         'jupyterlab-git'
     ]
 
