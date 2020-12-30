@@ -20,6 +20,9 @@ def tljh_post_install():
     # inspired by https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
     # and https://ideonate.com/DockerSpawner-in-TLJH/
     def install_docker():
+        def start_install():
+            use_packages_over_https()
+            
         def use_packages_over_https():
             subprocess.call("sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common", shell=True)
             add_gpg_key()
@@ -36,12 +39,14 @@ def tljh_post_install():
             subprocess.call("sudo apt update && sudo apt install -y docker-ce", shell=True)
             
         # ok, go!
-        use_packages_over_https()
+        start_install()
+        install_docker_spawner()
     
     # then we'll install docker spawner
     # inspired by https://ideonate.com/DockerSpawner-in-TLJH/
     def install_docker_spawner():
         subprocess.call("sudo /opt/tljh/hub/bin/python3 -m pip install dockerspawner jupyter_client", shell=True)
+        tljh_use_docker_spawner()
     
     # then'll we'll tell TLJH to use docker spawner 
     # and that the image to use is jupyter/datascience-notebook
@@ -64,13 +69,17 @@ def tljh_post_install():
             f.write(line)
             f.write("\n")
         f.close()
+        get_docker_image()
 
     # finally we need to download the docker image so it's ready
     def get_docker_image():
         subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3", shell=True)
+        restart_tljh()
+        
+    # and the restart TLJH
+    def restart_tljh():
+        subprocess.call("sudo tljh-config reload", shell=True)
    
+    # kick things off by installing docker
     install_docker()
-    install_docker_spawner()
-    tljh_use_docker_spawner()
-    get_docker_image()
     
