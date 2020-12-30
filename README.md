@@ -4,6 +4,7 @@ Tells TLJH to use [DockerSpawner](https://jupyterhub-dockerspawner.readthedocs.i
 
 The plugin also sets jupyterlab as the default interface. 
 
+
 ## Install
 
 Include `--plugin tljh-datascience` in your TLJH install script. For example, here user `kschuler` with password `password` installs TLJH with `tljh-datascience`:
@@ -28,6 +29,9 @@ The current list of available images is in `c.DockerSpawner.image_whitelist = ['
 ```
 sudo tljh-config reload
 ```
+## More advanced use
+
+This plugin simply uses docker spawner to start user servers in the docker containers you make available in a list. For more complex use-cases, check out [tljh-repo2docker](https://github.com/plasmabio/tljh-repo2docker) plugin. 
 
 
 ## Attribution
