@@ -7,6 +7,5 @@ setup(
   license="MIT",
   url="https://github.com/pennchildlanglab/tljh-datascience",
   entry_points = {"tljh": ["rjulia = tljh_datascience"]},
-  py_modules=["tljh_datascience"],
-  install_requires=["subprocess"],
+  py_modules=["tljh_datascience"]
 )
