@@ -85,9 +85,10 @@ def tljh_post_install():
         subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3", shell=True)
         restart_tljh()
         
-    # and the restart TLJH
+    # and the restart TLJH and rebuild jupyterlab
     def restart_tljh():
         subprocess.call("sudo tljh-config reload", shell=True)
+        subprocess.call("jupyter lab build")
    
     # kick things off by installing docker
     install_docker()
