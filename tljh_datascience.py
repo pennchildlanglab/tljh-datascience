@@ -58,7 +58,7 @@ def tljh_post_install():
         # add the details to use docker spawner with the datascience image
         contents = [
             "c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'",
-            "c.DockerSpawner.image_whitelist = ['jupyter/datascience-notebook:r-4.0.3', 'jupyter/datascience-notebook:r-3.6.6']",
+            "c.DockerSpawner.image_whitelist = ['jupyter/datascience-notebook:r-4.0.3', 'jupyter/datascience-notebook:r-3.6.3']",
             "from jupyter_client.localinterfaces import public_ips",
             "c.JupyterHub.hub_ip = public_ips()[0]",
             "c.DockerSpawner.name_template = '{prefix}-{username}-{servername}'"
