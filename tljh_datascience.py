@@ -94,12 +94,12 @@ def tljh_post_install():
     # finally we need to download the docker image so it's ready
     def get_docker_image():
         subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3", shell=True)
-        restart_tljh()
+        install_jupyterlab_extensions()
         
     def install_jupyterlab_extensions():
         subprocess.call("sudo -E jupyter contrib nbextension install --sys-prefix", shell=True)
         subprocess.call("sudo -E jupyter nbextension enable jupyterlab-git --sys-prefix", shell=True)
-        
+        restart_tljh()
 
         
     # and the restart TLJH and rebuild jupyterlab
