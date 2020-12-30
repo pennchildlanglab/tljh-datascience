@@ -21,7 +21,6 @@ This plugin was inspired by [this Ideonate post](https://ideonate.com/DockerSpaw
 
 ## To-do
 
-- would be great to allow users to set the docker image they want to use (or at least the datascience-notebook image); right now it's hard coded to use a stable release (r-4.0.3)
-
+- figure out how to include jupyterlab plugins (probably just a docker image based on the datascience-notebook is the easiest)
 
 
