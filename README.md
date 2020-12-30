@@ -29,6 +29,12 @@ The current list of available images is in `c.DockerSpawner.image_whitelist = ['
 ```
 sudo tljh-config reload
 ```
+
+The plugin currently pulls only one docker image, so other images will take a while to spin up the first time. If you want to pre-pull the images, you can also run the following, where `<tag>` is the specific tag for the image. 
+
+```
+sudo docker pull jupyter/datascience-notebook:<tag>"
+```
 ## More advanced use
 
 This plugin simply uses docker spawner to start user servers in the docker containers you make available in a list. For more complex use-cases, check out [tljh-repo2docker](https://github.com/plasmabio/tljh-repo2docker) plugin. 
