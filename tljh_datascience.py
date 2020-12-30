@@ -1,10 +1,20 @@
 from tljh.hooks import hookimpl
 import subprocess
 
+
+@hookimpl
+def tljh_extra_user_pip_packages():
+    """
+    Allow extensions for jupyterlab
+    """
+    return [
+        'jupyter_contrib_nbextensions'
+    ]
+
 @hookimpl
 def tljh_extra_user_conda_packages():
     """
-    Return list of extra conda packages to install in user environment.
+    Install extensions for git
     """
     return [
         'jupyterlab',
@@ -85,6 +95,12 @@ def tljh_post_install():
     def get_docker_image():
         subprocess.call("sudo docker pull jupyter/datascience-notebook:r-4.0.3", shell=True)
         restart_tljh()
+        
+    def install_jupyterlab_extensions():
+        subprocess.call("sudo -E jupyter contrib nbextension install --sys-prefix", shell=True)
+        subprocess.call("sudo -E jupyter nbextension enable jupyterlab-git --sys-prefix", shell=True)
+        
+
         
     # and the restart TLJH and rebuild jupyterlab
     def restart_tljh():
