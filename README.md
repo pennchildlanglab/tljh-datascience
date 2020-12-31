@@ -47,5 +47,6 @@ This plugin was inspired by [this Ideonate post](https://ideonate.com/DockerSpaw
 ## To-do
 
 - figure out how to include jupyterlab plugins (probably just a docker image based on the datascience-notebook is the easiest)
+- we could prob do this without using subprocesses --  maybe require dockerspawner in the setup.py and then import it; and then just install docker.io via additional apt packages. 
 
 
